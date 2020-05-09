@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+		<div class="card">
+			<div class="card-header">
+				<h2>Password Options</h2>
+			</div>
+			<div class="card-body">
+				<form id="pwform" class="p-t-20" action onSubmit="return false;">
+					<table align="center" border="1" cellspacing="5" cellpadding="5">
+						<tbody>
+							<tr> <!-- Category -->
+								<th>Length</th>
+								<th colspan="4">Characters</th>
+							</tr>
+							<tr> <!-- Item -->
+								<td>Length 8-24</td>
+								<td>Capitals</td>
+								<td>Lowercase</td>
+								<td>Numerals</td>
+								<td>Special</td>
+							</tr>
+							<tr align="center"> <!-- Checkbox -->
+								<td>
+									<input id="lengthSlider" type="range" min="8" max="24" value="16">
+									<span id="lengthDisplay"></span>
+								</td>
+								<td><input id="capitals" type="checkbox" checked value="ABCDEFGHIJKLMNOPQRSTUVWXYZ"></td>
+								<td><input id="lowercase" type="checkbox" checked value="abcdefghijklmnopqrstuvwxyz"></td>
+								<td><input id="numbers" type="checkbox" checked value="0123456789"></td>
+								<td><input id="specials" type="checkbox" checked value="\!@#$%^&*()_+"</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="go" class="btn">Generate Password</button>
+			<button id="stop" class="btn">Stop Generating Password</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
